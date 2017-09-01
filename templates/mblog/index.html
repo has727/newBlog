@@ -4,8 +4,11 @@
     <h2> Welcome to the microBlog</h2>
     <p>The current time is: <em>{{ now }}</em> </p>
 
-    <p>The link below leads to the list of posts</p>
-    <p><a href="{% url 'mblog:list' %}">List of posts</a> </p>
+{#    <p>The link below leads to the list of posts</p>#}
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'mblog:list' %}">List of posts</a> </p>
+    {% else %}
+    {% endif %}
 
 
 {% endblock %}
