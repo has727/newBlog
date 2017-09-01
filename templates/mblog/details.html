@@ -1,0 +1,20 @@
+{% extends 'mblog/base.html' %}
+{% block title %}Post Details{% endblock %}
+{% block content %}
+
+    <p><a href="{% url 'mblog:index' %}">Back to Home Page</a> </p>
+    <p><a href="{% url 'mblog:list' %}">Back to Post List</a> </p>
+
+    {{ topic }}<br><br>
+    {% for entry in entries %}
+        {{ entry.text|linebreaksbr }}<br><br>
+        {{ entry.date_added }}<br><br>
+
+        <a href="{% url 'mblog:editEntry' topic.id %}">Edit Entry</a>
+        <hr>
+    {% empty %}
+    {% endfor %}
+
+    <p><a href="{% url 'mblog:addEntry' topic.id %}">Add New Entry</a> </p>
+
+{% endblock %}

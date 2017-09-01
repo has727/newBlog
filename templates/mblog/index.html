@@ -1,0 +1,11 @@
+{% extends 'mblog/base.html' %}
+{% block title %} Home Page{% endblock %}
+{% block content %}
+    <h2> Welcome to the microBlog</h2>
+    <p>The current time is: <em>{{ now }}</em> </p>
+
+    <p>The link below leads to the list of posts</p>
+    <p><a href="{% url 'mblog:list' %}">List of posts</a> </p>
+
+
+{% endblock %}

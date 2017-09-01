@@ -1,0 +1,9 @@
+{% extends 'mblog/base.html' %}
+{% block title %}Add New Post{% endblock %}
+{% block content %}
+    <form action="{% url 'mblog:addTopic' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Post it</button>
+    </form>
+{% endblock %}

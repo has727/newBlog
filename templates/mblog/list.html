@@ -1,0 +1,17 @@
+{% extends 'mblog/base.html' %}
+{% block title %}List of Posts{% endblock %}
+{% block content %}
+
+    <p><a href="{% url 'mblog:index' %}">Back to Home Page</a> </p>
+    <p><a href="{% url 'mblog:addTopic' %}">Add New Topic</a> </p>
+
+    <ul>
+        {% for topic in topic_list %}
+        <li><a href="{% url 'mblog:details' topic.id %}">{{ topic }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+
+
+{% endblock %}
